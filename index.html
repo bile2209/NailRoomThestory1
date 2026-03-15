@@ -282,6 +282,25 @@ footer{background:var(--espresso);padding:5rem 4rem 2.5rem}
 [data-theme="dark"] .service-price{color:var(--mauve)}
 [data-theme="dark"] .location-num{color:var(--mauve)}
 [data-theme="dark"] .location-sub{color:var(--mauve-d)}
+
+/* ===== PRICE MENU ===== */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(196,160,168,0.12)}
+.price-card{background:#3E2A34;padding:2rem 2rem 2.5rem;transition:background 0.3s}
+.price-card:hover{background:#4E3545}
+.price-cat{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:#E0A8C0;margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid rgba(196,160,168,0.2);letter-spacing:0.05em}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;gap:0.5rem;padding:0.45rem 0;border-bottom:1px dashed rgba(196,160,168,0.1)}
+.price-row span:first-child{font-size:0.83rem;color:#F0E0E8;font-weight:300}
+.price-val{font-family:'Cormorant Garamond',serif;font-size:1rem;color:#E0A8C0;font-weight:400;white-space:nowrap;flex-shrink:0}
+.price-note{font-size:0.68rem;color:rgba(240,224,232,0.45);line-height:1.6;margin-top:0.5rem;font-style:italic}
+.price-add{font-size:0.7rem;color:#D4B0C8;margin-top:0.5rem;line-height:1.5}
+.price-divider{height:1px;background:rgba(196,160,168,0.2);margin:1rem 0}
+@media(max-width:900px){.price-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.price-grid{grid-template-columns:1fr}.price-card{padding:1.5rem 1.4rem}}
+[data-theme="dark"] .price-card{background:#2A1E30}
+[data-theme="dark"] .price-card:hover{background:#38284A}
+[data-theme="dark"] .price-cat{color:#E8B8D8}
+[data-theme="dark"] .price-row span:first-child{color:#F4EAF0}
+[data-theme="dark"] .price-val{color:#E8B8D8}
 </style>
 </head>
 <body>
@@ -350,16 +369,93 @@ footer{background:var(--espresso);padding:5rem 4rem 2.5rem}
 
 <section id="services" class="services">
   <div class="services-header reveal">
-    <div><p class="section-eyebrow">Our Craft</p><h2 class="section-title" style="color:#F0E0E8">Services we<br>take pride in</h2></div>
+    <div>
+      <p class="section-eyebrow">Our Craft</p>
+      <h2 class="section-title" style="color:#F0E0E8">Price Menu</h2>
+    </div>
     <a href="https://wa.me/60109622828" class="btn-primary" target="_blank">Book a Service</a>
   </div>
-  <div class="services-grid">
-    <div class="service-card reveal" data-tilt><div class="service-num">01</div><div class="service-icon"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><rect x="3" y="1" width="12" height="16" rx="6" stroke="#D4B0C8" stroke-width="0.8"/><line x1="3" y1="9" x2="15" y2="9" stroke="#D4B0C8" stroke-width="0.5"/></svg></div><h3 class="service-name">Classic Manicure</h3><p class="service-desc">Shaping, cuticle care, and a flawless coat of your chosen colour.</p><div class="service-price">From RM 35 — 45 min</div></div>
-    <div class="service-card reveal" data-tilt style="transition-delay:0.08s"><div class="service-num">02</div><div class="service-icon"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#D4B0C8" stroke-width="0.8"/><circle cx="9" cy="9" r="3" fill="rgba(212,176,200,0.35)" stroke="#D4B0C8" stroke-width="0.5"/></svg></div><h3 class="service-name">Gel Extension</h3><p class="service-desc">Sculpted to your ideal length. Weeks of perfect nails without a chip.</p><div class="service-price">From RM 80 — 90 min</div></div>
-    <div class="service-card reveal" data-tilt style="transition-delay:0.16s"><div class="service-num">03</div><div class="service-icon"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M2 16 L9 2 L16 16" stroke="#D4B0C8" stroke-width="0.8" fill="none"/><line x1="4" y1="12" x2="14" y2="12" stroke="#D4B0C8" stroke-width="0.5"/></svg></div><h3 class="service-name">Nail Art</h3><p class="service-desc">Minimalist lines to intricate florals — bespoke designs tailored to you.</p><div class="service-price">From RM 15/nail — varies</div></div>
-    <div class="service-card reveal" data-tilt style="transition-delay:0.24s"><div class="service-num">04</div><div class="service-icon"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><rect x="1" y="5" width="16" height="8" rx="4" stroke="#D4B0C8" stroke-width="0.8"/></svg></div><h3 class="service-name">Chrome &amp; Foil</h3><p class="service-desc">Mirror-finish chrome or delicate foil overlays that catch the light.</p><div class="service-price">From RM 20 add-on — 20 min</div></div>
-    <div class="service-card reveal" data-tilt style="transition-delay:0.32s"><div class="service-num">05</div><div class="service-icon"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M9 2 C5 2 2 5 2 9 C2 13 5 16 9 16 C13 16 16 13 16 9" stroke="#D4B0C8" stroke-width="0.8" fill="none"/></svg></div><h3 class="service-name">Pedicure Luxury</h3><p class="service-desc">Soak, scrub, mask, massage, and polish. Artisanal attention for your feet.</p><div class="service-price">From RM 55 — 60 min</div></div>
-    <div class="service-card reveal" data-tilt style="transition-delay:0.4s"><div class="service-num">06</div><div class="service-icon"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M3 15 L9 3 L15 15" stroke="#D4B0C8" stroke-width="0.8" fill="none" stroke-linejoin="round"/><circle cx="9" cy="9" r="2" fill="rgba(212,176,200,0.4)" stroke="#D4B0C8" stroke-width="0.5"/></svg></div><h3 class="service-name">Bridal Package</h3><p class="service-desc">Full treatment, custom art, and touch-up for your most important day.</p><div class="service-price">From RM 200 — full package</div></div>
+
+  <div class="price-grid reveal">
+
+    <!-- EXPRESS -->
+    <div class="price-card">
+      <h3 class="price-cat">Express</h3>
+      <div class="price-row"><span>Express Manicure</span><span class="price-val">RM35</span></div>
+      <div class="price-row"><span>Express Pedicure</span><span class="price-val">RM35</span></div>
+      <p class="price-note">incl. cutting, shaping, buffing, cuticle oil</p>
+      <div class="price-row"><span>Express Manicure Color</span><span class="price-val">RM45</span></div>
+      <div class="price-row"><span>Express Pedicure Color</span><span class="price-val">RM45</span></div>
+      <p class="price-note">incl. cutting, shaping, buffing, coloring, cuticle oil</p>
+    </div>
+
+    <!-- CLASSIC -->
+    <div class="price-card">
+      <h3 class="price-cat">Classic</h3>
+      <div class="price-row"><span>Classic Manicure</span><span class="price-val">RM58</span></div>
+      <div class="price-row"><span>Classic Pedicure</span><span class="price-val">RM78</span></div>
+      <div class="price-row"><span>Classic Pedicure (Male)</span><span class="price-val">RM88</span></div>
+      <p class="price-note">incl. cutting, shaping, buffing, coloring, cut cuticle, pedi scrub, cuticle oil</p>
+      <p class="price-add">Add-on GEL remover other shop RM15 / Exten RM25</p>
+    </div>
+
+    <!-- GEL -->
+    <div class="price-card">
+      <h3 class="price-cat">Gel</h3>
+      <div class="price-row"><span>Express Gel Manicure</span><span class="price-val">RM75</span></div>
+      <div class="price-row"><span>Express Gel Pedicure</span><span class="price-val">RM85</span></div>
+      <p class="price-add">Add-on GEL remover other shop RM15 / Exten RM25</p>
+      <div class="price-divider"></div>
+      <div class="price-row"><span>Classic Gel Manicure</span><span class="price-val">RM100</span></div>
+      <div class="price-row"><span>Classic Gel Pedicure</span><span class="price-val">RM100</span></div>
+      <p class="price-add">Add-on GEL remover other shop RM10 / Exten RM25</p>
+      <div class="price-divider"></div>
+      <div class="price-row"><span>Full Set Gel Pedicure</span><span class="price-val">RM130</span></div>
+      <p class="price-add">Add-on GEL remover other shop RM10 / Exten RM15</p>
+      <div class="price-divider"></div>
+      <div class="price-row"><span>Treatment Skin Cells</span><span class="price-val">RM45</span></div>
+      <p class="price-note">incl. skin cells, pedi scrub, cuticle oil</p>
+    </div>
+
+    <!-- GEL REMOVAL -->
+    <div class="price-card">
+      <h3 class="price-cat">GEL Removal</h3>
+      <div class="price-row"><span>Removal Our Shop (No Redo)</span><span class="price-val">RM10</span></div>
+      <div class="price-row"><span>Extension Our Shop (No Redo)</span><span class="price-val">RM20</span></div>
+      <div class="price-row"><span>Gel Removal Other Shop</span><span class="price-val">RM35</span></div>
+      <div class="price-row"><span>Extension Other Shop</span><span class="price-val">RM50</span></div>
+    </div>
+
+    <!-- SPA -->
+    <div class="price-card">
+      <h3 class="price-cat">Spa</h3>
+      <div class="price-row"><span>Spa Manicure</span><span class="price-val">RM120</span></div>
+      <p class="price-note">incl. cutting, shaping, buffing, coloring, mani scrub, cuticle oil</p>
+      <div class="price-row"><span>Spa Pedicure</span><span class="price-val">RM140</span></div>
+      <p class="price-note">incl. cutting, shaping, buffing, coloring, pedi scrub, cuticle oil</p>
+      <div class="price-row"><span>Spa Manicure GEL</span><span class="price-val">RM158</span></div>
+      <p class="price-note">incl. cutting, shaping, buffing, coloring, mani scrub, cuticle oil</p>
+      <p class="price-add">Add-on GEL remover other shop RM10 / Exten RM25</p>
+      <div class="price-row"><span>Spa Pedicure GEL</span><span class="price-val">RM168</span></div>
+      <p class="price-note">incl. cutting, shaping, buffing, coloring, pedi scrub, cuticle oil</p>
+    </div>
+
+    <!-- EXTENSION -->
+    <div class="price-card">
+      <h3 class="price-cat">Extension</h3>
+      <div class="price-row"><span>Extension Manicure</span><span class="price-val">RM188</span></div>
+      <div class="price-row"><span>Extension Pedicure</span><span class="price-val">RM188</span></div>
+      <p class="price-add">Add-on GEL remover other shop RM10 / Exten RM15</p>
+      <p class="price-note">incl. cutting, shaping, buffing, coloring, pedi scrub, cuticle oil</p>
+      <div class="price-divider"></div>
+      <div class="price-row"><span>Express Extension Refill</span><span class="price-val">RM125</span></div>
+      <div class="price-row"><span>Extension Manicure Refill</span><span class="price-val">RM150</span></div>
+      <p class="price-note">incl. cutting, shaping, buffing, coloring, cuticle oil</p>
+      <div class="price-divider"></div>
+      <div class="price-row"><span>Extension By 1 Finger</span><span class="price-val">RM20</span></div>
+      <div class="price-row"><span>Extension By 1 Finger (Gel Set)</span><span class="price-val">RM12</span></div>
+    </div>
+
   </div>
 </section>
 
@@ -434,7 +530,7 @@ footer{background:var(--espresso);padding:5rem 4rem 2.5rem}
         <li><span class="li-label">Hours</span>10:00 AM — 8:00 PM Daily</li>
         <li><span class="li-label">Phone</span>+60 16-321 1768</li>
         <li><span class="li-label">WhatsApp</span>+60 10-962 2828</li>
-        <li><span class="li-label">Email</span><a href="mailto:nailroomthestory@gmail.com" style="color:var(--latte);text-decoration:none;transition:color 0.3s" onmouseover="this.style.color='var(--mauve-d)'" onmouseout="this.style.color='var(--latte)'">nailroomthestory@gmail.com</a></li>
+        <li><span class="li-label">Email</span><a href="/cdn-cgi/l/email-protection#640a050d08160b0b09100c0117100b161d240309050d084a070b09" style="color:var(--latte);text-decoration:none;transition:color 0.3s" onmouseover="this.style.color='var(--mauve-d)'" onmouseout="this.style.color='var(--latte)'"><span class="__cf_email__" data-cfemail="93fdf2faffe1fcfcfee7fbf6e0e7fce1ead3f4fef2faffbdf0fcfe">[email&#160;protected]</span></a></li>
       </ul>
       <a href="https://wa.me/60109622828" class="location-cta" target="_blank">Book via WhatsApp</a>
     </div>
@@ -446,7 +542,7 @@ footer{background:var(--espresso);padding:5rem 4rem 2.5rem}
         <li><span class="li-label">Hours</span>10:00 AM — 8:00 PM Daily</li>
         <li><span class="li-label">Phone</span>+60 16-321 1768</li>
         <li><span class="li-label">WhatsApp</span>+60 10-962 2828</li>
-        <li><span class="li-label">Email</span><a href="mailto:nailroomthestory@gmail.com" style="color:var(--latte);text-decoration:none;transition:color 0.3s" onmouseover="this.style.color='var(--mauve-d)'" onmouseout="this.style.color='var(--latte)'">nailroomthestory@gmail.com</a></li>
+        <li><span class="li-label">Email</span><a href="/cdn-cgi/l/email-protection#2f414e46435d4040425b474a5c5b405d566f48424e4643014c4042" style="color:var(--latte);text-decoration:none;transition:color 0.3s" onmouseover="this.style.color='var(--mauve-d)'" onmouseout="this.style.color='var(--latte)'"><span class="__cf_email__" data-cfemail="600e01090c120f0f0d14080513140f121920070d01090c4e030f0d">[email&#160;protected]</span></a></li>
       </ul>
       <a href="https://wa.me/60109622828" class="location-cta" target="_blank">Book via WhatsApp</a>
     </div>
@@ -467,7 +563,7 @@ footer{background:var(--espresso);padding:5rem 4rem 2.5rem}
     <div class="footer-brand"><a href="#" class="nav-logo">Nail Room</a><p>A sanctuary for nail artistry in Kuching, Sarawak. We craft stories one nail at a time.</p></div>
     <div class="footer-col"><h4>Services</h4><ul><li><a href="#">Classic Manicure</a></li><li><a href="#">Gel Extension</a></li><li><a href="#">Nail Art</a></li><li><a href="#">Chrome &amp; Foil</a></li><li><a href="#">Pedicure</a></li><li><a href="#">Bridal Package</a></li></ul></div>
     <div class="footer-col"><h4>Studio</h4><ul><li><a href="#">Our Story</a></li><li><a href="#">Our Team</a></li><li><a href="#">Gallery</a></li><li><a href="#locations">Locations</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul><li><a href="https://wa.me/60109622828" target="_blank">WhatsApp</a></li><li><a href="mailto:nailroomthestory@gmail.com">Email Us</a></li><li><a href="https://www.facebook.com/Nailroomthestory" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/nailroom.nail.studio" target="_blank">Instagram</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="https://wa.me/60109622828" target="_blank">WhatsApp</a></li><li><a href="/cdn-cgi/l/email-protection#0f616e66637d6060627b676a7c7b607d764f68626e6663216c6062">Email Us</a></li><li><a href="https://www.facebook.com/Nailroomthestory" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/nailroom.nail.studio" target="_blank">Instagram</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <p>2025 Nail Room The Story — All rights reserved</p>
@@ -478,7 +574,7 @@ footer{background:var(--espresso);padding:5rem 4rem 2.5rem}
     </div>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
 "use strict";
 
@@ -648,7 +744,6 @@ document.getElementById('lightboxPrev').addEventListener('click', function(){ se
   var ltX=0;
   lb.addEventListener('touchstart', function(e){ ltX=e.touches[0].clientX; }, {passive:true});
   lb.addEventListener('touchend', function(e){ var dx=e.changedTouches[0].clientX-ltX; if(Math.abs(dx)>50) setLb(cur+(dx<0?1:-1),true); });
-
 })();
 </script>
 </body>
